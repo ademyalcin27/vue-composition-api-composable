@@ -1,11 +1,13 @@
 <template>
  <div class="posts">
+   <div v-if="!loading">
     <div v-if="error">{{error}}</div>
     <div v-if="post" class="posts__list">
       <PostList :post="post"/>
     </div>
-    <div v-else><Spinner /></div>
   </div>
+   <div v-else><Spinner /></div>
+ </div>
 </template>
 
 <script>
